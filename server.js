@@ -1,7 +1,8 @@
+require('dotenv').config();
 const express = require('express');
 const fetch = require('node-fetch');
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Allow requests from your frontend
 app.use(require('cors')());
@@ -16,7 +17,7 @@ app.get('/getProfilePic', async (req, res) => {
     method: 'GET',
     headers: {
       'x-rapidapi-host': 'whatsapp-profile-pic.p.rapidapi.com',
-      'x-rapidapi-key': 'da949b45e5mshd847ffdf187b908p16f82fjsn301400523fe1' // 👈 Secure here
+      'x-rapidapi-key': process.env.API_KEY // 👈 Secure here
     }
   };
 
