@@ -6,6 +6,10 @@ const PORT = process.env.PORT || 3000;
 
 // Allow requests from your frontend
 app.use(require('cors')());
+app.use(cors({
+  origin: 'https://whaspy.vercel.app',
+  credentials : true
+}));
 
 app.get('/getProfilePic', async (req, res) => {
   const phone = req.query.phone;
