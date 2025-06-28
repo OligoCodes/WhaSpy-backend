@@ -2,10 +2,10 @@ require('dotenv').config();
 const express = require('express');
 const fetch = require('node-fetch');
 const app = express();
+const cors = require('cors');
 const PORT = process.env.PORT || 3000;
 
 // Allow requests from your frontend
-app.use(require('cors')());
 app.use(cors({
   origin: 'https://whaspy.vercel.app',
   credentials : true
